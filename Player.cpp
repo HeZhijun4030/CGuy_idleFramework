@@ -1,4 +1,5 @@
 ﻿#include "Player.h"
+#include "Argm.h"
 CMain_Framework::CMain_Framework() {
     money = 0;
     baseIncome = 10.0;
@@ -8,12 +9,9 @@ CMain_Framework::CMain_Framework() {
 
 void CMain_Framework::playRound(int round) {
     double income = baseIncome * multiplier;
-    double actualIncome = income * std::sqrt(round + 1);
+    double actualIncome = OMG_actualIncome(baseIncome, multiplier, round);
     money += actualIncome;
-
-    if ((round+1) % 5 == 0) {
-        multiplier += 0.1;
-    }
+    idk_multiplier(&multiplier, round);
 
     std::cout << "round  " << round + 1 << "\n";
     std::cout << "actualIncome  " << actualIncome << "\n";

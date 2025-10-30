@@ -9,7 +9,7 @@ endif()
 project ("CGuy_Idle")
 
 
-add_executable (CGuy_Idle "Player.cpp" "CGuy_Idle.h" "Player.h" "main.cpp")
+add_executable (CGuy_Idle "Player.cpp" "CGuy_Idle.h" "Player.h" "main.cpp" "Argm.cpp" "Argm.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CGuy_Idle PROPERTY CXX_STANDARD 20)
